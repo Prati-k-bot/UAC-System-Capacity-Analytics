@@ -1,0 +1,32 @@
+UNIFIED MENTOR SUBMISSION CHECKLIST
+
+1. GitHub Repository Link
+   Example format:
+   https://github.com/YOUR-USERNAME/UAC-System-Capacity-Analytics
+
+   Repository should contain:
+   - app.py
+   - UAC_Cleaned_Data.csv
+   - KPI_Snapshot.csv
+   - PowerBI_DAX_Measures.txt
+   - requirements.txt
+   - README.md
+   - Research_Paper.md
+
+2. Research Paper Link
+   Upload Research_Paper.md as a PDF to Google Drive or another publicly accessible location.
+   Required URL must start with:
+   https://
+
+3. Deployed Project Link
+   Deploy app.py on Streamlit Community Cloud.
+   Example:
+   https://YOUR-APP-NAME.streamlit.app
+
+4. Project Feedback Video Link
+   Record the supplied script and upload it to YouTube as Unlisted or to another publicly accessible video service.
+   Example:
+   https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+
+IMPORTANT:
+Do not submit placeholder URLs. Replace YOUR-USERNAME, YOUR-APP-NAME and YOUR_VIDEO_ID with your actual links.

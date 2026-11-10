@@ -1,0 +1,54 @@
+# Power BI DAX Measures
+# Rename the table below to match your imported table, e.g. UAC_Data.
+
+Total Children Under Care =
+VAR LatestDate = MAX(UAC_Data[Date])
+RETURN
+CALCULATE(
+    MAX(UAC_Data[Children in CBP custody]) +
+    MAX(UAC_Data[Children in HHS Care]),
+    UAC_Data[Date] = LatestDate
+)
+
+Net Intake Pressure =
+VAR LatestDate = MAX(UAC_Data[Date])
+RETURN
+CALCULATE(
+    MAX(UAC_Data[Children transferred out of CBP custody]) -
+    MAX(UAC_Data[Children discharged from HHS Care]),
+    UAC_Data[Date] = LatestDate
+)
+
+Care Load Volatility Index =
+STDEVX.P(
+    VALUES(UAC_Data[Date]),
+    CALCULATE(
+        MAX(UAC_Data[Children in CBP custody]) +
+        MAX(UAC_Data[Children in HHS Care])
+    )
+)
+
+Backlog Accumulation Rate =
+DIVIDE(
+    COUNTROWS(
+        FILTER(
+            VALUES(UAC_Data[Date]),
+            CALCULATE(MAX(UAC_Data[Children transferred out of CBP custody]))
+            >
+            CALCULATE(MAX(UAC_Data[Children discharged from HHS Care]))
+        )
+    ),
+    COUNTROWS(VALUES(UAC_Data[Date]))
+)
+
+Discharge Offset Ratio =
+DIVIDE(
+    SUM(UAC_Data[Children discharged from HHS Care]),
+    SUM(UAC_Data[Children transferred out of CBP custody])
+)
+
+CBP Care Load = SUM(UAC_Data[Children in CBP custody])
+HHS Care Load = SUM(UAC_Data[Children in HHS Care])
+Total Transfers = SUM(UAC_Data[Children transferred out of CBP custody])
+Total Discharges = SUM(UAC_Data[Children discharged from HHS Care])
+Total Apprehensions = SUM(UAC_Data[Children apprehended and placed in CBP custody*])

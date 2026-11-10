@@ -1,0 +1,25 @@
+PROJECT FEEDBACK VIDEO SCRIPT
+
+Hello everyone, my name is Pratik V Desai.
+
+My Unified Mentor project is titled “System Capacity & Care Load Analytics for Unaccompanied Children.”
+
+The main objective of this project is to analyze operational care-load data and convert it into meaningful KPIs and interactive dashboards.
+
+The dataset contains reporting dates, children apprehended and placed in CBP custody, children in CBP custody, children transferred out of CBP custody, children in HHS care, and children discharged from HHS care.
+
+First, I cleaned the dataset using Python and Pandas. I converted the date field, cleaned numeric values, removed blank records, sorted the data chronologically, and created derived analytical features.
+
+The major KPI calculations are Total Children Under Care, Net Intake Pressure, Care Load Volatility Index, Backlog Accumulation Rate, and Discharge Offset Ratio.
+
+I then developed visual analytics in Power BI. The dashboard contains KPI cards, CBP versus HHS load trends, system-load trends, flow analysis, and date filtering.
+
+I also developed a Streamlit web application using Python, Pandas, NumPy and Plotly. The application allows users to select a date range and interactively explore system load, transfers, discharges, backlog indicators and detailed records.
+
+One important learning from this project was understanding how raw operational data can be converted into business and operational KPIs. I also improved my skills in data cleaning, feature engineering, DAX, Power BI visualization, Python and Streamlit deployment.
+
+The main challenge was designing KPI definitions that are simple, transparent and reproducible. I addressed this by documenting each formula and clearly separating project-level analytical indicators from official policy thresholds.
+
+Overall, this project helped me understand the complete data analytics workflow, from raw data preparation to dashboard development and deployment.
+
+Thank you for watching my project feedback video.
